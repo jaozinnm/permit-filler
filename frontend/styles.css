@@ -1,0 +1,562 @@
+/* =========================
+   Permit Filler — Clean White/Blue UI
+   Single stylesheet for: company.html, project.html, editor.html
+   ========================= */
+
+:root{
+  --bg: #f6f8fc;
+  --card: #ffffff;
+  --text: #0f172a;         /* slate-900 */
+  --muted: #64748b;        /* slate-500 */
+  --border: #e2e8f0;       /* slate-200 */
+  --blue: #2563eb;         /* blue-600 */
+  --blue2: #1d4ed8;        /* blue-700 */
+  --danger: #ef4444;       /* red-500 */
+
+  --shadow: 0 10px 30px rgba(2, 6, 23, .08);
+  --shadow2: 0 6px 18px rgba(2, 6, 23, .06);
+
+  --radius: 14px;
+  --radius2: 10px;
+
+  --topbar-h: 56px;
+  --container: 980px;
+
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+*{ box-sizing: border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ===== Layout ===== */
+.topbar{
+  height: var(--topbar-h);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  display:flex;
+  align-items:center;
+  padding: 0 16px;
+  gap: 12px;
+}
+.brand{
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.topbar .right{
+  margin-left: auto;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.container{
+  max-width: var(--container);
+  margin: 22px auto;
+  padding: 0 16px 40px;
+}
+
+.screen{
+  min-height: calc(100vh - var(--topbar-h));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 28px 16px;
+}
+
+.hidden{ display:none !important; }
+
+/* ===== Cards ===== */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.card h1{
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  letter-spacing: -.2px;
+}
+.card h2{
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  letter-spacing: -.1px;
+}
+.card h3{
+  margin: 0 0 6px 0;
+  font-size: 15px;
+}
+.miniCard{
+  padding: 14px;
+  box-shadow: var(--shadow2);
+}
+.cardHeader{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 14px;
+}
+
+/* ===== Text helpers ===== */
+.muted{ color: var(--muted); }
+.hint{
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0 0 0;
+}
+.mini{
+  color: var(--muted);
+  font-size: 13px;
+  padding: 10px 0;
+}
+.pre{
+  margin: 12px 0 0 0;
+  background: #0b1220;
+  color: #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  overflow:auto;
+  max-height: 240px;
+  font-size: 12px;
+}
+
+/* ===== Divider ===== */
+.divider{
+  height:1px;
+  background: var(--border);
+  margin: 14px 0;
+}
+
+/* ===== Forms ===== */
+.label{
+  display:block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  margin: 8px 0 6px;
+}
+
+.input, .select{
+  width:100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  background: white;
+  color: var(--text);
+  transition: border .15s ease, box-shadow .15s ease;
+}
+
+.input:focus, .select:focus{
+  border-color: rgba(37,99,235,.55);
+  box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+.formGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+}
+.formGrid .full{ grid-column: 1 / -1; }
+
+/* ===== Buttons ===== */
+.btn{
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor:pointer;
+  font-weight: 700;
+  transition: transform .05s ease, background .15s ease, border .15s ease;
+  user-select:none;
+}
+.btn:hover{
+  background: #f8fafc;
+}
+.btn:active{
+  transform: translateY(1px);
+}
+.btn.primary{
+  border-color: rgba(37,99,235,.25);
+  background: var(--blue);
+  color: white;
+}
+.btn.primary:hover{ background: var(--blue2); }
+.btn.danger{
+  border-color: rgba(239,68,68,.25);
+  background: var(--danger);
+  color:white;
+}
+.btn:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.row{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+.grow{ flex: 1; }
+
+/* ===== Pills ===== */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  font-size: 12px;
+  color: #334155;
+}
+
+/* ===== Lists ===== */
+.list{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: #ffffff;
+}
+.list .layerItem{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 8px 0;
+  background: #fff;
+}
+.list .layerItem b{
+  display:block;
+  margin-bottom: 2px;
+}
+.list .layerItem small{
+  color: var(--muted);
+}
+
+/* ===== Stepper (optional) ===== */
+.stepper{
+  max-width: var(--container);
+  margin: 14px auto 0;
+  padding: 0 16px;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.stepper .bar{
+  height:2px;
+  background: var(--border);
+  flex:1;
+}
+.step{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 12px;
+}
+.step .n{
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid var(--border);
+  background: white;
+  color: #334155;
+}
+.step.active{
+  color: var(--text);
+}
+.step.active .n{
+  border-color: rgba(37,99,235,.35);
+  box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+/* =========================
+   EDITOR layout helpers
+   ========================= */
+
+.editorWrap{
+  width: 100%;
+  height: calc(100vh - var(--topbar-h));
+  display:flex;
+  gap: 12px;
+  padding: 12px;
+}
+
+.panel{
+  width: 320px;
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow:auto;
+  padding-bottom: 8px;
+}
+
+.panel.left{ width: 340px; }
+.panel.right{ width: 320px; }
+
+.stage{
+  flex:1;
+  min-width: 520px;
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+}
+
+.canvasWrap{
+  width: 100%;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow2);
+  overflow:auto;
+  position: relative;
+  padding: 10px;
+}
+
+#pdfCanvas{
+  display:block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* ✅ overlay do editor (ID) */
+#overlay{
+  position:absolute;
+  left:0;
+  top:0;
+  pointer-events: auto; /* necessário pro drag/click nas layers */
+}
+
+/* nodes criadas pelo app.js */
+.layerNode{
+  pointer-events: auto;
+}
+
+/* Overlay items (se seu app cria divs com class) */
+.overlay-item{
+  position:absolute;
+  pointer-events: auto;
+  cursor: move;
+  user-select:none;
+  padding: 2px 4px;
+  border-radius: 8px;
+  border: 1px dashed rgba(37,99,235,.35);
+  background: rgba(37,99,235,.06);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .formGrid{ grid-template-columns: 1fr; }
+  .panel.left, .panel.right{ display:none; }
+  .editorWrap{ padding: 10px; }
+}
+
+/* =========================
+   EDITOR - polish (safe)
+   ========================= */
+body[data-page="editor"] {
+  background: #f6f7fb;
+}
+
+body[data-page="editor"] .editorLayout {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  gap: 14px;
+  padding: 14px;
+  align-items: start;
+}
+
+body[data-page="editor"] .panel {
+  background: #fff;
+  border: 1px solid #e7e9f2;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(18, 38, 63, 0.06);
+  padding: 14px;
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 24px);
+  overflow: auto;
+}
+
+body[data-page="editor"] .panelTitle {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+body[data-page="editor"] .row {
+  margin-bottom: 10px;
+}
+
+body[data-page="editor"] .rowInline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+body[data-page="editor"] .input, 
+body[data-page="editor"] select,
+body[data-page="editor"] input[type="file"] {
+  width: 100%;
+  border: 1px solid #e4e7f0;
+  border-radius: 10px;
+  padding: 10px 10px;
+  background: #fff;
+  outline: none;
+}
+
+body[data-page="editor"] .input:focus,
+body[data-page="editor"] select:focus {
+  border-color: #8aa6ff;
+  box-shadow: 0 0 0 4px rgba(138, 166, 255, 0.18);
+}
+
+body[data-page="editor"] .btn {
+  border: 1px solid #e1e5f0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body[data-page="editor"] .btn.primary {
+  background: #2f6bff;
+  border-color: #2f6bff;
+  color: #fff;
+}
+
+body[data-page="editor"] .btn.danger {
+  background: #ff3b30;
+  border-color: #ff3b30;
+  color: #fff;
+}
+
+body[data-page="editor"] .btn:hover {
+  filter: brightness(0.98);
+}
+
+body[data-page="editor"] .sep {
+  border: 0;
+  border-top: 1px solid #eef0f6;
+  margin: 12px 0;
+}
+
+body[data-page="editor"] .list {
+  border: 1px solid #eef0f6;
+  background: #fbfcff;
+  border-radius: 12px;
+  padding: 8px;
+  min-height: 110px;
+}
+
+body[data-page="editor"] .mini {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+body[data-page="editor"] .status {
+  background: #0b1220;
+  color: #d7e0ff;
+  border-radius: 12px;
+  padding: 10px;
+  min-height: 70px;
+  white-space: pre-wrap;
+}
+
+/* Canvas area */
+body[data-page="editor"] .canvasWrap {
+  background: #fff;
+  border: 1px solid #e7e9f2;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(18, 38, 63, 0.06);
+  padding: 12px;
+  min-height: calc(100vh - 28px);
+}
+
+body[data-page="editor"] .canvasStage {
+  position: relative;
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px dashed #e6e9f5;
+  background: repeating-linear-gradient(
+    45deg,
+    #fbfcff,
+    #fbfcff 10px,
+    #f7f8fd 10px,
+    #f7f8fd 20px
+  );
+  padding: 14px;
+  min-height: calc(100vh - 84px);
+}
+
+body[data-page="editor"] #pdfCanvas {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+}
+
+/* ✅ se você usar classe .overlay (além do #overlay), não quebra o drag */
+body[data-page="editor"] .overlay {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  right: 14px;
+  bottom: 14px;
+  pointer-events: auto; /* era none — isso matava clique/drag nas layers */
+}
+
+/* Project: permits list (pra mostrar todas as opções com scroll) */
+#permitsList{
+  max-height: 340px;
+  overflow: auto;
+  padding-right: 6px;
+}
+.permitRow{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:8px 6px;
+  border-radius:10px;
+}
+.permitRow:hover{ background:#f8fafc; }
+.permitName{ font-weight:700; }
+
+/* Editor: overlay items (layers visíveis e arrastáveis) */
+.ovItem{
+  position:absolute;
+  cursor:grab;
+  user-select:none;
+  padding:2px 6px;
+  border-radius:8px;
+  border:1px dashed rgba(0,0,0,.18);
+  background:rgba(255,255,255,.75);
+  font-size:12px;
+}
+.ovItem.active{
+  border:2px solid rgba(37,99,235,.75);
+  background:rgba(219,234,254,.75);
+}
+
+/* Layer nodes criadas pelo app.js */
+.layerNode{ pointer-events:auto; }

@@ -1,0 +1,16 @@
+{
+  "miami": {
+    "name": "City of Miami",
+    "forms": {
+      "building_permit": "Building Permit Application",
+      "roofing_owner_notification": "Roofing Owner Notification",
+      "roof_report": "Roof Report",
+      "permit_issuance": "Permit Issuance",
+      "permit_card": "Permit Card",
+      "noc_recorded": "NOC Recorded",
+      "revision_request": "Revision Request",
+      "rfp_01": "RFP-01",
+      "pap_01": "PAP-01"
+    }
+  }
+}

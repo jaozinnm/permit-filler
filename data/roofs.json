@@ -1,0 +1,10 @@
+{
+  "roof_shingles_demo": {
+    "system_manufacturer": "GAF",
+    "noa_primary": "NOA-12345",
+    "noa_underlayment": "NOA-67890",
+    "pressure_zone_1": "-45.0",
+    "pressure_zone_2": "-55.0",
+    "pressure_zone_3": "-65.0"
+  }
+}

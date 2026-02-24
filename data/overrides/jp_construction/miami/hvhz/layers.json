@@ -1,0 +1,32 @@
+[
+  {
+    "type": "text",
+    "key": "custom.text",
+    "value": "",
+    "page": 1,
+    "x": 285.9259440104167,
+    "y": 772.7407531738281,
+    "font_size": 10,
+    "id": "A70da7505453de819c49d1a2fb"
+  },
+  {
+    "type": "text",
+    "key": "custom.text",
+    "value": "",
+    "page": 1,
+    "x": 294.8148193359375,
+    "y": 753.4814758300781,
+    "font_size": 10,
+    "id": "A29020271e0267819c49d1a2fb"
+  },
+  {
+    "type": "text",
+    "key": "custom.text",
+    "value": "",
+    "page": 1,
+    "x": 374.0740966796875,
+    "y": 771.259267171224,
+    "font_size": 10,
+    "id": "A75b69384e9abc819c49d1a2fb"
+  }
+]

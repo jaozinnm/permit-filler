@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ly_2d728222cbe5c8_1770687561421",
+    "type": "text",
+    "key": "job.address",
+    "page": 1,
+    "x": 369.1666666666667,
+    "y": 977.1666666666666,
+    "font_size": 20,
+    "value": "R. Ibipituba, 90"
+  },
+  {
+    "id": "ly_9406e50f754698_1770687561421",
+    "type": "text",
+    "key": "job.zip",
+    "page": 1,
+    "x": 405,
+    "y": 927.6666666666666,
+    "font_size": 10,
+    "value": "51350-095"
+  },
+  {
+    "id": "ly_a731bf7f29dde8_1770687561421",
+    "type": "text",
+    "key": "roof.category",
+    "page": 1,
+    "x": 251.66666666666666,
+    "y": 924.8333333333334,
+    "font_size": 27,
+    "value": "shingles"
+  },
+  {
+    "id": "ly_a25b40e660f808_1770687561421",
+    "type": "text",
+    "key": "roof.area_sqft",
+    "page": 1,
+    "x": 236.66666666666666,
+    "y": 968.6666666666666,
+    "font_size": 10,
+    "value": "23000"
+  },
+  {
+    "id": "ly_32f30e3194e088_1770687561421",
+    "type": "text",
+    "key": "company.name",
+    "page": 1,
+    "x": 80,
+    "y": 880,
+    "font_size": 10,
+    "value": "MAAT SOLUÇÕES LTDA"
+  },
+  {
+    "id": "ly_ec425ab7363bc8_1770687561421",
+    "type": "text",
+    "key": "company.license",
+    "page": 1,
+    "x": 80,
+    "y": 868,
+    "font_size": 10,
+    "value": "1234462"
+  },
+  {
+    "id": "ly_a49febda608c6_1770687561421",
+    "type": "text",
+    "key": "company.address",
+    "page": 1,
+    "x": 182.5,
+    "y": 903.5,
+    "font_size": 10,
+    "value": "RUA ALMIRANTE BARROSO, 275"
+  }
+]

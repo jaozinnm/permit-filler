@@ -1,0 +1,81 @@
+{
+  "jp_construction": {
+    "name": "JP General Construction, Inc",
+    "license": "CGC1531102",
+    "address": "R ALMIRANTE BARROSO",
+    "phone": "81998902569",
+    "email": "licitacaomaat@gmail.com",
+    "qualifier": "",
+    "fields": {
+      "company.name": "JP General Construction, Inc",
+      "company.license": "CGC1531102",
+      "company.qualifier_name": "",
+      "company.address": "R ALMIRANTE BARROSO",
+      "company.phone": "81998902569",
+      "company.email": "licitacaomaat@gmail.com"
+    },
+    "updated_at": "2026-02-10T20:07:44.611351"
+  },
+  "abc_roofing": {
+    "name": "ABC Roofing LLC",
+    "license": "CCC987654",
+    "address": "123 Main St, Miami, FL",
+    "phone": "305-555-0000",
+    "email": "contact@abcroofing.com"
+  },
+  "jr_limitada": {
+    "name": "jr limitada",
+    "license": "12345",
+    "address": "r. navegntes",
+    "phone": "89999",
+    "email": "9292"
+  },
+  "mmdisplay": {
+    "name": "uchoa",
+    "license": "999",
+    "address": "rua tal de tal",
+    "phone": "1989819",
+    "email": "jr..."
+  },
+  "jp": {
+    "name": "MAST",
+    "license": "CCC1111",
+    "address": "111",
+    "phone": "111",
+    "email": "1111"
+  },
+  "MAAT SOLUÇÕES LTDA": {
+    "name": "MAAT SOLUÇÕES LTDA",
+    "license": "1234462",
+    "address": "RUA ALMIRANTE BARROSO, 275",
+    "phone": "81998902569",
+    "email": "LICITACAOMAAT@GMAIL.COM",
+    "qualifier": "MAAT SOLUÇÕES LTDA",
+    "updated_at": "2026-02-09T22:27:12.274365",
+    "fields": {
+      "company.name": "MAAT SOLUÇÕES LTDA",
+      "company.license": "1234462",
+      "company.qualifier_name": "MAAT SOLUÇÕES LTDA",
+      "company.address": "RUA ALMIRANTE BARROSO, 275",
+      "company.phone": "81998902569",
+      "company.email": "LICITACAOMAAT@GMAIL.COM"
+    }
+  },
+  "JOAO RAFAL LIMITADA": {
+    "name": "JOAO RAFAEL TECH SOLUCTIONS",
+    "license": "13245768",
+    "address": "RUA DESEMBARGADOR JOAO PAES, 911",
+    "phone": "81998902569",
+    "email": "JOAO.TECH@GMAIL.COM",
+    "qualifier": "SOLUCTIONS LTDA",
+    "fields": {
+      "company.name": "JOAO RAFAEL TECH SOLUCTIONS",
+      "company.license": "13245768",
+      "company.qualifier_name": "SOLUCTIONS LTDA",
+      "company.address": "RUA DESEMBARGADOR JOAO PAES, 911",
+      "company.phone": "81998902569",
+      "company.email": "JOAO.TECH@GMAIL.COM"
+    },
+    "updated_at": "2026-02-09T22:26:34.209707"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "miami_roof_packet_test": {
+    "name": "uchoa.tech",
+    "company_key": "mmdisplay",
+    "job_key": "job_demo",
+    "owner_key": "owner_demo",
+    "roof_key": "roof_shingles_demo",
+    "forms": [
+      {
+        "city": "miami",
+        "form_key": "building_permit"
+      },
+      {
+        "city": "hvhz",
+        "form_key": "uniform_roof_application_8th_2023"
+      },
+      {
+        "city": "miami_dade",
+        "form_key": "roof_to_wall_affidavit"
+      }
+    ]
+  },
+  "1234_doral": {
+    "name": "doral",
+    "company_key": "jp",
+    "job_key": null,
+    "owner_key": null,
+    "roof_key": null,
+    "forms": []
+  },
+  "job_tal": {
+    "name": "123 miami",
+    "company_key": "jp",
+    "job_key": null,
+    "owner_key": null,
+    "roof_key": null,
+    "forms": [
+      {
+        "city": "miami",
+        "form_key": "building_permit"
+      }
+    ]
+  },
+  "'123_recufe": {
+    "name": "roof",
+    "company_key": null,
+    "job_key": null,
+    "owner_key": null,
+    "roof_key": null,
+    "forms": [
+      {
+        "city": "miami",
+        "form_key": "building_permit"
+      }
+    ]
+  },
+  "projeto_saulo": {
+    "name": "123 orlando",
+    "company_key": "jp",
+    "job_key": null,
+    "owner_key": null,
+    "roof_key": null,
+    "forms": [
+      {
+        "city": "miami",
+        "form_key": "building_permit"
+      }
+    ]
+  },
+  "121": {
+    "name": "tesste",
+    "company_key": "jp",
+    "job_key": null,
+    "owner_key": null,
+    "roof_key": null,
+    "forms": [
+      {
+        "city": "hvhz",
+        "form_key": "uniform_roof_application_8th_2023"
+      },
+      {
+        "city": "miami",
+        "form_key": "building_permit"
+      },
+      {
+        "city": "miami_dade",
+        "form_key": "roof_to_wall_affidavit"
+      }
+    ]
+  }
+}

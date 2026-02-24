@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Permit Filler — Empresa</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="company">
+
+  <header class="topbar">
+    <div class="brand">Permit Filler</div>
+    <div class="right">
+      <span class="pill">1/3 • Empresa</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Empresa</h1>
+      <p class="muted">Cadastre uma vez. Esses dados viram padrão nos permits.</p>
+
+      <div class="row">
+        <div class="grow">
+          <label class="label">Empresas salvas</label>
+          <select id="selCompany" class="select"></select>
+        </div>
+        <button id="btnRefreshCompanies" class="btn">Atualizar</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="formGrid">
+        <div>
+          <label class="label">company_key</label>
+          <input id="companyKey" class="input" placeholder="jp" />
+        </div>
+
+        <div class="full">
+          <label class="label">Company name</label>
+          <input id="companyName" class="input" placeholder="JP General Roofing" />
+        </div>
+
+        <div>
+          <label class="label">License</label>
+          <input id="companyLicense" class="input" placeholder="CCC1234567" />
+        </div>
+
+        <div>
+          <label class="label">Qualifier name</label>
+          <input id="companyQualifier" class="input" placeholder="John Doe" />
+        </div>
+
+        <div class="full">
+          <label class="label">Address</label>
+          <input id="companyAddress" class="input" placeholder="..." />
+        </div>
+
+        <div>
+          <label class="label">Phone</label>
+          <input id="companyPhone" class="input" placeholder="..." />
+        </div>
+
+        <div>
+          <label class="label">Email</label>
+          <input id="companyEmail" class="input" placeholder="..." />
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:14px;">
+        <button id="btnSaveCompany" class="btn primary">Salvar</button>
+        <div class="grow"></div>
+        <button id="btnGoProject" class="btn">Continuar →</button>
+      </div>
+
+      <p id="companyMsg" class="hint"></p>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

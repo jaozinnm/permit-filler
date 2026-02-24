@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Permit Filler — Projeto</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="project">
+
+  <header class="topbar">
+    <div class="brand">Permit Filler</div>
+    <div class="right">
+      <button id="btnGoCompany" class="btn">← Empresa</button>
+      <span class="pill">2/3 • Projeto</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Projeto</h1>
+      <p class="muted">Crie/abra um projeto e selecione quais permits ele terá.</p>
+
+      <div class="divider"></div>
+
+      <div class="formGrid">
+        <div>
+          <label class="label">Empresa selecionada</label>
+          <div id="selectedCompanyView" class="pill">—</div>
+          <p class="hint">Vem da Tela 1.</p>
+        </div>
+
+        <div>
+          <label class="label">City</label>
+          <select id="selCity" class="select"></select>
+        </div>
+
+        <div class="full">
+          <label class="label">Nome do projeto</label>
+          <input id="projectName" class="input" placeholder="1666 Micanopy - Reroof" />
+        </div>
+
+        <hr class="sep" />
+
+        <h3 class="panelTitle">Dados do Job</h3>
+
+        <div class="row">
+          <label class="label">Job Address</label>
+          <input id="jobAddress" class="input" placeholder="Ex: 123 Main St" />
+        </div>
+
+        <div class="row rowInline" style="gap:10px;">
+          <div style="flex:1;">
+            <label class="label">ZIP</label>
+            <input id="jobZip" class="input" placeholder="33161" />
+          </div>
+
+          <div style="flex:1;">
+            <label class="label">Roof Category</label>
+            <select id="roofCategory" class="select">
+              <option value="">— selecione —</option>
+              <option value="shingles">Shingles</option>
+              <option value="metal">Metal</option>
+              <option value="tile">Tile</option>
+              <option value="flat">Flat</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="label">Roof Area (sqft)</label>
+          <input id="roofAreaSqft" class="input" type="number" min="0" step="1" placeholder="1908" />
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Permits (forms)</h2>
+      <p class="muted">Marque os permits que este projeto vai gerar.</p>
+
+      <div id="permitsList" class="list">
+        <div class="mini">Selecione uma city para carregar os permits…</div>
+      </div>
+
+      <div class="row" style="margin-top:12px;">
+        <button id="btnSelectAllPermits" class="btn">Marcar tudo</button>
+        <button id="btnClearPermits" class="btn">Limpar</button>
+        <div class="grow"></div>
+        <button id="btnCreateProject" class="btn primary">Salvar projeto</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Projetos salvos</h2>
+      <div class="row">
+        <select id="projectSelect" class="select"></select>
+        <button id="btnRefreshProjects" class="btn">Atualizar</button>
+        <button id="btnOpenEditor" class="btn primary">Abrir preview →</button>
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <button id="btnGeneratePacket" class="btn">Gerar PDFs (packet)</button>
+        <button id="btnOpenFolder" class="btn" disabled>Abrir pasta</button>
+      </div>
+
+      <pre id="apiStatus" class="pre"></pre>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Permit Filler — Editor</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body data-page="editor">
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="topbar">
+    <button id="btnBack" class="btn">← Voltar</button>
+
+    <div class="brand">
+      <strong>Editor</strong>
+      <span id="editorContext" class="mini">
+        <!-- City / Permit -->
+      </span>
+    </div>
+
+    <div class="right">
+      <span id="companyBadge" class="pill">Company: —</span>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="editorLayout">
+
+    <!-- ===== LEFT PANEL (Context) ===== -->
+    <aside class="panel leftPanel">
+      <h3 class="panelTitle">Contexto</h3>
+
+      <div class="row">
+        <label class="label">City</label>
+        <input id="ctxCity" class="input" readonly />
+      </div>
+
+      <div class="row">
+        <label class="label">Permit</label>
+        <select id="permitSelect" class="select"></select>
+      </div>
+
+      <hr class="sep" />
+
+      <div style="margin-top:12px;">
+        <div style="font-weight:600; margin-bottom:6px;">Ações (presets)</div>
+
+        <input id="actionName" placeholder="Ex: shingles / metal / tile" class="input" style="margin-bottom:8px;" />
+
+        <div style="display:flex; gap:8px; margin-bottom:8px;">
+          <button id="btnSaveAction" type="button" class="btn" style="flex:1;">Salvar ação</button>
+          <button id="btnApplyAction" type="button" class="btn" style="flex:1;">Aplicar ação</button>
+        </div>
+
+        <select id="actionSelect" class="select"></select>
+      </div>
+
+      <hr class="sep" />
+
+      <h3 class="panelTitle">Ações</h3>
+
+      <hr class="sep" />
+      <h3 class="panelTitle">Dados do Projeto</h3>
+
+      <div class="row">
+        <label class="label">Job Address</label>
+        <input id="edJobAddress" class="input" />
+      </div>
+
+      <div class="row rowInline" style="gap:10px;">
+        <div style="flex:1;">
+          <label class="label">ZIP</label>
+          <input id="edJobZip" class="input" />
+        </div>
+
+        <div style="flex:1;">
+          <label class="label">Roof Category</label>
+          <select id="edRoofCategory" class="select">
+            <option value="">— selecione —</option>
+            <option value="shingles">Shingles</option>
+            <option value="metal">Metal</option>
+            <option value="tile">Tile</option>
+            <option value="flat">Flat</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="label">Roof Area (sqft)</label>
+        <input id="edRoofAreaSqft" class="input" type="number" min="0" step="1" />
+      </div>
+
+      <button id="btnApplyProjectData" class="btn">
+        Aplicar dados no preview
+      </button>
+
+      <div class="row" style="margin-top:12px;">
+        <button id="btnSaveOverride" class="btn primary">
+          Salvar ajustes (override)
+        </button>
+      </div>
+
+      <!-- ✅ PATCH: Download Packet (.zip) -->
+      <button id="btnDownloadPacket" type="button" style="width:100%; margin-top:10px;">
+        Download packet (.zip)
+      </button>
+
+      <div class="row">
+        <pre id="apiStatus" class="status"></pre>
+      </div>
+    </aside>
+
+    <!-- ===== CENTER (Preview) ===== -->
+    <section class="canvasWrap">
+
+      <!-- ✅ NAV DO PDF (setinhas + página) -->
+      <div class="row rowInline" style="gap:10px; align-items:center; margin-bottom:10px;">
+        <button id="btnPrevPage" class="btn">◀</button>
+        <button id="btnNextPage" class="btn">▶</button>
+
+        <span class="mini" id="pageInfo" style="margin-left:6px;">Página —</span>
+
+        <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
+          <span class="mini">Ir para:</span>
+          <input id="pageNum" class="input" type="number" min="1" style="width:90px;" />
+        </div>
+      </div>
+
+      <div class="canvasStage">
+        <canvas id="pdfCanvas"></canvas>
+        <div id="overlay" class="overlay"></div>
+      </div>
+    </section>
+
+    <!-- ===== RIGHT PANEL (Layers) ===== -->
+    <aside class="panel rightPanel">
+      <h3 class="panelTitle">Layers</h3>
+
+      <div class="row rowInline">
+        <button id="btnAddText" class="btn">+ Texto</button>
+        <button id="btnAddCheck" class="btn">+ Check</button>
+        <button id="btnAddLine" class="btn">+ Linha</button>
+      </div>
+
+      <div class="row">
+        <div id="layersList" class="list"></div>
+      </div>
+
+      <hr class="sep" />
+
+      <h3 class="panelTitle">Layer selecionada</h3>
+
+      <div id="layerEditor" class="layerEditor" style="display:none">
+
+        <div class="row">
+          <label class="label">Key</label>
+          <input id="layerKey" class="input" />
+        </div>
+
+        <div class="grid2">
+          <div class="row">
+            <label class="label">X</label>
+            <input id="layerX" class="input" type="number" step="0.01" />
+          </div>
+
+          <div class="row">
+            <label class="label">Y</label>
+            <input id="layerY" class="input" type="number" step="0.01" />
+          </div>
+
+          <div class="row">
+            <label class="label">Página</label>
+            <input id="layerPage" class="input" type="number" min="1" />
+          </div>
+
+          <div class="row">
+            <label class="label">Fonte</label>
+            <input id="layerFont" class="input" type="number" />
+          </div>
+        </div>
+
+        <div class="row">
+          <button id="btnDeleteLayer" class="btn danger">Excluir layer</button>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- ================= SCRIPTS ================= -->
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+  </script>
+
+  <!-- ✅ App (somente 1 vez) -->
+  <script src="./app.js"></script>
+
+  <!-- ✅ PATCH 2 (FRONTEND): salvar override antes de baixar -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("btnDownloadPacket");
+      if (!btn) return;
+
+      const originalOnClick = btn.onclick;
+
+      btn.onclick = async (ev) => {
+        // antes de chamar /api/download-company
+        if (typeof saveOverrideToApi === "function") {
+          const currentLayers = Array.isArray(window.__editorLayers) ? window.__editorLayers : [];
+          await saveOverrideToApi(currentLayers, {}); // ou fieldsPatch se quiser
+        }
+
+        if (typeof originalOnClick === "function") {
+          return originalOnClick.call(btn, ev);
+        }
+      };
+    });
+  </script>
+
+</body>
+</html>

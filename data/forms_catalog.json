@@ -1,0 +1,16 @@
+{
+  "miami": {
+    "building_permit": {
+      "name": "City of Miami - Permit Application",
+      "template_dir": "frontend/templates/miami/building_permit"
+    },
+    "hvhz": {
+      "name": "HVHZ Uniform Permit Application (FBC 8th 2023)",
+      "template_dir": "frontend/templates/miami/hvhz"
+    },
+    "miami_dade": {
+      "name": "Miami-Dade County Permit",
+      "template_dir": "frontend/templates/miami/miami_dade"
+    }
+  }
+}
